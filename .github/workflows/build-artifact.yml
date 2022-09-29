@@ -1,0 +1,25 @@
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+      - uses: actions/checkout@v3
+      - name: Run a one-line script
+        run: echo Hello, world!
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+- name: Upload a Build Artifact
+  uses: actions/upload-artifact@v3.1.0
+  with:
+    name: # optional, default is artifact
+  warn: Output a warning but do not fail the action
+  error: Fail the action with an error message
+  ignore: Do not output any warnings or errors, the action does not fail
+    if-no-files-found: # optional, default is warn
+Minimum 1 day. Maximum 90 days unless changed from the repository settings page.
+    retention-days: # optional
